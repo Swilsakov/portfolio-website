@@ -1,16 +1,8 @@
 import { FloatingNav } from "@/components/ui/FloatingNav";
-import { FaHome } from "react-icons/fa";
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import RecentProjects from "@/components/RecentProjects";
-
-const navItems = [
-  {
-    name: "Home",
-    link: "/",
-    icon: <FaHome />,
-  },
-];
+import { navItems } from "@/data";
 
 export default function Home() {
   return (
