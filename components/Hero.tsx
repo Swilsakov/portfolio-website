@@ -34,7 +34,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-large lg:text-2xl">
-            Hi, I&apos;m Vladimir, a Next.js Developer based in Asia/Bishkek.
+            Hi, I&apos;m Vladimir, a Frontend Developer based in Asia/Bishkek.
           </p>
 
           <a href="#about">

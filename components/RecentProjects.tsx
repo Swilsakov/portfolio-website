@@ -1,11 +1,19 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import { FaLocationArrow } from "react-icons/fa6";
-
 import { projects } from "@/data";
 import { PinContainer } from "./ui/3d-Pin";
 
 const RecentProjects = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Ensures code only runs on client-side
+  }, []);
+
+  if (!isClient) return null; // Prevent rendering until mounted
+
   return (
     <div id="projects" className="py-20">
       <h1 className="heading">
@@ -18,22 +26,18 @@ const RecentProjects = () => {
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={item.id}
           >
-            <PinContainer
-              title="/ui.aceternity.com"
-              href="https://twitter.com/mannupaaji"
-            >
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
-                <div 
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
+            <PinContainer title={item.link} href={item.link}>
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[220px] mb-10 rounded-3xl">
+                <div
+                  className="relative w-full h-full overflow-hidden"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <img src="/bg.png" alt="bgimg" />
+                  <img
+                    src={item.img}
+                    alt="contain"
+                    className="z-10 absolute bottom-0 w-full h-full object-cover"
+                  />
                 </div>
-                <img
-                  src={item.img}
-                  alt="cover"
-                  className="z-10 absolute bottom-0"
-                />
               </div>
 
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
